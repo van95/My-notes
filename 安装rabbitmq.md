@@ -44,6 +44,9 @@ yum -y install rabbitmq-server-3.7.16-1.el7.noarch.rpm
 添加用户
 ./rabbitmqctl add_user username password
 
+设置超级管理员权限
+./rabbitmqctl set_user_tags username administrator
+
 用户列表
 ./rabbitmqctl list_users
 
