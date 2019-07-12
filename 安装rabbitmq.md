@@ -1,4 +1,4 @@
-### 安装erlang
+# 安装erlang
 ```
 sudo yum install gcc glibc-devel make ncurses-devel openssl-devel autoconf
 tar zxvf otp_src_R15B01.tar.gz
@@ -6,11 +6,11 @@ wget http://erlang.org/download/otp_src_22.0.tar.gz
 cd otp_src_22.0.tar.gz
 ./configure && make && sudo make install
 ```
-### 0依赖erlang安装
+# 0依赖erlang安装
 
->https://github.com/rabbitmq/erlang-rpm/releases
+>erlang官方下载地址:https://github.com/rabbitmq/erlang-rpm/releases
 
->https://github.com/rabbitmq/rabbitmq-server/releases`
+>rabbitmq官方下载地址:https://github.com/rabbitmq/rabbitmq-server/releases
 
 ```
 cd /usr/local
@@ -20,22 +20,22 @@ wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.16/rabbi
 yum -y install rabbitmq-server-3.7.16-1.el7.noarch.rpm
 
 ```
-### 查找默认配置
+# 查找默认配置
 `find / -name rabbitmq-defaults`
 
-### 启动rabbitmq
+# 启动rabbitmq
 `nohup ./rabbitmq-server start &`
 
-### 启动可视化界面
+# 启动可视化界面
 `./rabbitmq-plugins enable rabbitmq_management`
 
-### 查看日志
+# 查看日志
 `tail -f  /var/log/rabbitmq/rabbit\@iZj6cdtcbwezle8l9i1e7zZ.log`
 
 ---
 
-### 常用操作
-#### rabbitmqctl
+# 常用操作
+## rabbitmqctl
 
 
 
