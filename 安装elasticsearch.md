@@ -44,11 +44,39 @@ useradd elsearch -g elsearch -p elasticsearch
 ```
 chown -R elsearch:elsearch  elasticsearch
 ```
+### 解决启动报错 1 
+[1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]
+[2]: max number of threads [3800] for user [esuser] is too low, increase to at least [4096]
+```
+# 切换root用户
+[root@localhost config]# vi /etc/security/limits.conf
+# 添加如下4行内容
+*        soft    nofile      65536
+*        hard    nofile      65536
+*        soft    nproc       4096
+*        hard    nproc       4096
+```
+### 解决启动报错 2
+[3]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+```
+[root@localhost config]# vi /etc/sysctl.conf
+# 添加下面这行
+vm.max_map_count=655360
+```
+
 ### 切换到elsearch用户再启动
 ```
 su elsearch # 切换账户
+加载设置好的系统参数
+sysctl [-n] [-e] -p <filename> (default /etc/sysctl.conf)
+sudo sysctl -p
 cd elasticsearch/bin # 进入你的elasticsearch目录下的bin目录
 ./elasticsearch
+```
+
+### 访问elasticsearch
+```
+ xxx.xxx.xxx.xxx:9200
 ```
 
 
