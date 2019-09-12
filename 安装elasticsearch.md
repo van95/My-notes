@@ -14,7 +14,7 @@ wget https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin
 ```
 ### 解压
 ```
- tar -zxvf elasticsearch-7.3.1-linux-x86_64.tar.gz openjdk-11.0.1_linux-x64_bin.tar.gz
+ tar -zxvf openjdk-11.0.1_linux-x64_bin.tar.gz
 ```
 ### 修改 bin/elasticsearch,指定jdk版本
 ```
